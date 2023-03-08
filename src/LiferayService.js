@@ -11,11 +11,6 @@ const LiferayService = {
             type: 'danger',
           });
         } else {
-          window['Liferay'].Util.openToast({
-            title: 'Success',
-            message: `Your request completed successfully.`,
-            type: 'success',
-          });
           return data;
         }
       } catch (error) {
