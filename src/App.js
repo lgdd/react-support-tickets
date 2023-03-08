@@ -1,8 +1,23 @@
 import LiferayService from './LiferayService';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const scopeKey = window['Liferay'] ? window['Liferay'].ThemeDisplay.getSiteGroupId() : 50123;
-  const data = LiferayService.get(`/o/c/supporttickets/scopes/${scopeKey}`);
+  const scopeKey = window['Liferay']
+    ? window['Liferay'].ThemeDisplay.getSiteGroupId()
+    : 50123;
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await LiferayService.get(
+        `/o/c/supporttickets/scopes/${scopeKey}`
+      );
+
+      setData(result);
+    };
+
+    fetchData();
+  }, [scopeKey]);
 
   const priorityCss = (priority) => {
     if (priority === 'major') {
