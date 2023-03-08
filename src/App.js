@@ -5,7 +5,7 @@ function App() {
   const scopeKey = window['Liferay']
     ? window['Liferay'].ThemeDisplay.getSiteGroupId()
     : 50123;
-  const [data, setData] = useState({});
+  const [data, setData] = useState({ items: [] });
 
   useEffect(() => {
     const fetchData = async () => {
