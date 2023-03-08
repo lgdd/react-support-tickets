@@ -72,9 +72,9 @@ function App() {
               <tr>
                 <td class="table-cell-expand">
                   <div class="table-list-title">
-                    <a class="text-truncate-inline" href="#1">
+                    <span class="text-truncate-inline">
                       <span class="text-truncate">{item.subject}</span>
-                    </a>
+                    </span>
                   </div>
                 </td>
                 <td class="table-cell-expand">
