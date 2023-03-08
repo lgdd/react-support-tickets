@@ -1,7 +1,7 @@
 import LiferayService from './LiferayService';
 
 function App() {
-  const scopeKey = window['Liferay'].ThemeDisplay.getSiteGroupId() | 50123;
+  const scopeKey = window['Liferay'] ? window['Liferay'].ThemeDisplay.getSiteGroupId() : 50123;
   const data = LiferayService.get(`/o/c/supporttickets/scopes/${scopeKey}`);
 
   const priorityCss = (priority) => {
